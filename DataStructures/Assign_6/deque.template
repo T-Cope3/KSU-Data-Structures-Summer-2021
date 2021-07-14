@@ -1,0 +1,206 @@
+//Troy Cope
+//3305 Summer Section W01
+//Prof. Shi
+//7/13/21
+
+//modeled after node2.template
+//does not require a namespace
+//should not require any imports (I believe)
+
+template <typename T>
+
+//constructor and destructor
+
+deque<T>::deque()
+{
+    count = 0;
+    first = NULL;
+    last = NULL;
+}
+
+// postcondition: all resouroces allocated to the deque have been deallocated
+template <typename T>
+deque<T>::~deque()
+{
+   list_clear(first);
+   //will automatically do the rest
+}
+
+// postcondition: newly created deque is a copy of dq
+template <typename T>
+deque<T>::deque(const deque<T>& dq)
+{
+    //simply copy and reassgning count
+   list_copy(dq.first, first, last);
+   count = dq.count;
+}
+
+//assigning the = operator to create a copy constructor
+
+// postcondition: current deque is a copy of dq
+template <typename T>
+deque<T>& deque<T>::operator= (const deque<T>& dq)
+{
+   list_clear(first);
+  
+   list_copy(dq.first, first, last);
+   count = dq.count;
+}
+
+
+//basically the setters~~~~~
+
+
+//precondition: deque is not empty
+//postcondition: reference to element at front of deque has been returned
+template <typename T>
+T& deque<T>::front()
+{
+   assert(!empty());
+   return first->data();
+}
+
+// precondition: deque is not empty
+// postcondition: copy of element at front of deque has been returned
+template <typename T>
+T deque<T>::front() const
+{
+   assert(!empty());
+   return first->data();
+}
+
+// precondition: deque is not empty
+// postcondition: reference to element at front of deque has been returned
+template <typename T>
+T& deque<T>::back()
+{
+   assert(!empty());
+   return last->data();
+}
+
+// precondition: deque is not empty
+// postcondition: copy of element at back of deque has been returned
+template <typename T>
+T deque<T>::back() const
+{
+   assert(!empty());
+   return last->data();
+}
+
+//~~~Most of the work here, main functions~~~~
+
+// postcondition: entry has been inserted at the front of the deque
+template <typename T>
+void deque<T>::push_front(const T& entry)
+{
+   list_head_insert(first, entry);
+   if (size() == 1)
+   {
+       last = first;
+   }
+  
+}
+
+// postcondition: entry has been inserted at the back
+//                            of the deque
+template <typename T>
+void deque<T>::push_back(const T& entry)
+{
+   if (empty())
+   {
+       list_head_insert(first, entry);
+       last = first;
+   }
+   else
+   {
+       list_insert(last, entry);
+       last = last->link();
+   }
+}
+
+// precondition: deque is not empty
+// postcondition: element at front of deque has been removed
+template <typename T>
+void deque<T>::pop_front()
+{
+   if (first == last)
+   {
+       last = NULL;
+   }
+  
+   list_head_remove(first);
+}
+
+// precondition: deque is not empty
+// postcondition: element at back of deque has been removed
+template <typename T>
+void deque<T>::pop_back()
+{
+   node<T>* tmp = first;
+   if (first == last)
+   {
+       last = NULL;
+       list_head_remove(first);
+   }
+   else
+   {
+       while (tmp->link() != last && tmp != NULL)
+       {
+           tmp = tmp->link();
+       }
+       last = tmp;
+       list_remove(tmp);
+   }
+}
+
+//~~~Getters~~~
+
+// postcondition: number of elements in deque has been returned
+template <typename T>
+typename deque<T>::size_type deque<T>::size() const
+{
+   return list_length(first);
+}
+
+// postcondition: whether deque is empty has been returned
+template <typename T>
+bool deque<T>::empty() const
+{
+   return size()==0;
+}
+
+//~~~More overriding, another couple of complex ones~~~
+
+// postcondition: returned whether 2 deques are equal - equal is defined as the deques have the same number of elements & corresponding elements are equal
+template <typename U>
+bool operator== (const deque<U>& dq1, const deque<U>& dq2)
+{
+   if (dq1.size() != dq2.size())
+       return false;
+       
+    //using generic j as an iterator to match i
+  
+   const_node_iterator<U> j(dq2.first);
+   for (const_node_iterator<U> i(dq1.first); i != NULL; i++)
+   {
+       //comparing and then iterating
+       if (*i != *j)
+           return false;
+       j++;
+   }
+   return true;
+}
+
+// postcondition: dq has been display from front to rear on out
+template <typename U>
+std::ostream& operator<< (std::ostream& out, const deque<U>& dq)
+{
+   //splitting the print statement so that it displays nicely
+   for (const_node_iterator<U> i(dq.first); i != NULL; i++)
+   {
+       out << *i;
+       if (i != dq.last)
+           out << ", ";
+   }
+   return out;
+}

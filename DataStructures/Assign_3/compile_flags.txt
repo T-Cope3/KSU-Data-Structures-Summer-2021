@@ -1,0 +1,9 @@
+-Id:\ming_32\lib\gcc\mingw32\9.2.0\include\c++
+-Id:\ming_32\lib\gcc\mingw32\9.2.0\include\c++\mingw32
+-Id:\ming_32\lib\gcc\mingw32\9.2.0\include\c++\backward
+-Id:\ming_32\lib\gcc\mingw32\9.2.0\include
+-Id:\ming_32\include
+-Id:\ming_32\lib\gcc\mingw32\9.2.0\include-fixed
+-ID:\CS_3305\Part_3
+-target
+mingw32

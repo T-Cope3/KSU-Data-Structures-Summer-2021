@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="DataStructures" Database="" Version="10000">
-  <VirtualDirectory Name="Assignment_4">
-    <Project Name="Part_1" Path="Part_1/Part_1.project" Active="No"/>
-    <Project Name="Part_1" Path="Part_1/Part_1.project" Active="No"/>
-  </VirtualDirectory>
+  <VirtualDirectory Name="Assignment_4"/>
   <VirtualDirectory Name="Assignment_5">
     <Project Name="Assign_5" Path="Assign_5/Assign_5.project" Active="No"/>
   </VirtualDirectory>
@@ -13,7 +10,10 @@
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="Assignment_6">
-    <Project Name="Assign_6" Path="Assign_6/Assign_6.project" Active="Yes"/>
+    <Project Name="Assign_6" Path="Assign_6/Assign_6.project" Active="No"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="Assignment_7">
+    <Project Name="Assign_7" Path="Assign_7/Assign_7.project" Active="Yes"/>
   </VirtualDirectory>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
@@ -23,6 +23,7 @@
       <Project Name="Assign_5" ConfigName="Debug"/>
       <Project Name="DataStructures" ConfigName="Debug"/>
       <Project Name="Assign_6" ConfigName="Debug"/>
+      <Project Name="Assign_7" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -31,6 +32,7 @@
       <Project Name="Assign_5" ConfigName="Release"/>
       <Project Name="DataStructures" ConfigName="Release"/>
       <Project Name="Assign_6" ConfigName="Release"/>
+      <Project Name="Assign_7" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

@@ -1,3 +1,8 @@
+//Troy Cope
+//3305 Summer Section W01
+//Prof. Shi
+//7/19/21
+
 #include <stdio.h>
 #include <string>
 #include <iostream>
@@ -24,32 +29,41 @@ int main(int argc, char **argv)
 // for (k = 0; k < n; k++) outs << "* ";
 
  // Precondition: n is a power of 2 greater than zero.
- // Postcondition: A pattern based on the above example has been
- // printed to the ostream outs. The longest line of the pattern has
- // n stars beginning in column i of the output. For example,
-// The above pattern is produced by the call pattern(cout, 8, 0).
+ // Postcondition: A pattern based on the above example has been printed to the ostream outs. The longest line of the pattern has
+ // n stars beginning in column i of the output. For example, the above pattern is produced by the call pattern(cout, 8, 0).
 void pattern(ostream& outs, unsigned int n, unsigned int i)
 {
+    //base case stops everything of course
     if (n == 0) 
-        return; //base case stops everything ofc
+        return; 
 
-    pattern(outs, n/2, i); // Each upper half, has to call first
+    //Each upper half, has to call first
+    pattern(outs, n/2, i); 
 
-    for (int k = 0; k < i ; k++) outs << " "; // Central spacing
+    //spaces always come before stars
+    for (int k = 0; k < i ; k++) outs << " ";
+    
+    //prints stars always with a space between them
+    for (int k = 0; k < n; k++) outs << "* ";
 
-    for (int k = 0; k < n; k++) outs << "* "; // Central string
+    //gaps to space everything out
+    outs << endl; 
 
-    outs << endl; //gaps to space everything out
-
-    pattern(outs, n/2, i+n/2); // Each below, has to print after obviously
+    // Each below, has to print after each midsection obviously
+    pattern(outs, n/2, i+n/2); 
 
 }
 
+//Precondition: levels is indeed an integer and prefix exists
+//Postcondition: prints out a series of numbers 0-9 seprated by decimals for each level
 void numbers(ostream& outs, const string& prefix, unsigned int levels)
 {
+    //uses str and checks if no levels are applied
     string str;
     if(levels == 0)
         outs << prefix << endl;
+        
+    //then runs a loop for each case, recursiveley until it ends
     else
     {
         for(char i = '1'; i <= '9'; i++)

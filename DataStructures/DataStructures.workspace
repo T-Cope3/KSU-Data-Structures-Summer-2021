@@ -13,7 +13,10 @@
     <Project Name="Assign_6" Path="Assign_6/Assign_6.project" Active="No"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Assignment_7">
-    <Project Name="Assign_7" Path="Assign_7/Assign_7.project" Active="Yes"/>
+    <Project Name="Assign_7" Path="Assign_7/Assign_7.project" Active="No"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="Assignment_8">
+    <Project Name="Assign_8" Path="Assign_8/Assign_8.project" Active="Yes"/>
   </VirtualDirectory>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
@@ -24,6 +27,7 @@
       <Project Name="DataStructures" ConfigName="Debug"/>
       <Project Name="Assign_6" ConfigName="Debug"/>
       <Project Name="Assign_7" ConfigName="Debug"/>
+      <Project Name="Assign_8" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -33,6 +37,7 @@
       <Project Name="DataStructures" ConfigName="Release"/>
       <Project Name="Assign_6" ConfigName="Release"/>
       <Project Name="Assign_7" ConfigName="Release"/>
+      <Project Name="Assign_8" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

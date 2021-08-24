@@ -6,7 +6,7 @@
   </VirtualDirectory>
   <VirtualDirectory Name="Testing">
     <VirtualDirectory Name="T1">
-      <Project Name="DataStructures" Path="DataStructures/DataStructures.project" Active="No"/>
+      <Project Name="DataStructures" Path="DataStructures/DataStructures.project" Active="Yes"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="Assignment_6">
@@ -16,7 +16,7 @@
     <Project Name="Assign_7" Path="Assign_7/Assign_7.project" Active="No"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Assignment_8">
-    <Project Name="Assign_8" Path="Assign_8/Assign_8.project" Active="Yes"/>
+    <Project Name="Assign_8" Path="Assign_8/Assign_8.project" Active="No"/>
   </VirtualDirectory>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
